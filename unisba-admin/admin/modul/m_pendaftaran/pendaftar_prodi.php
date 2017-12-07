@@ -57,7 +57,7 @@ $("#username").css('border', '3px #C33 solid');
 </script>
 <?php
 include '../../config/conection.php';
-$aksi="modul/m_psb_sma/aksi_pendaftar.php";
+$aksi="modul/m_pendaftar/aksi_pendaftar.php";
 $url=$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 $actual_link = "http://$_SERVER[HTTP_HOST]";
 if(!isset($_GET['act'])){

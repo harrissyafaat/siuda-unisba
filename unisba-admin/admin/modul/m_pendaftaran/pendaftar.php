@@ -59,7 +59,7 @@ $("#username").css('border', '3px #C33 solid');
 
 <?php
 include '../../config/conection.php';
-$aksi="modul/m_psb_sma/aksi_pendaftar.php";
+$aksi="modul/m_pendaftar/aksi_pendaftar.php";
 $url=$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 
 if(!isset($_GET['act'])){
@@ -187,8 +187,8 @@ switch($_GET["act"]){
 }
 ?>
 <br>
-<a href="http://36.66.216.186/wisuda/cetak_pendaftar.php"><button type="button" style="height: 30px; float: left; margin-left: 30%;">Export Data Excel</button></a>
-<a href="http://36.66.216.186/wisuda/cetak_buku_wisuda.php"><button type="button" style="height: 30px; float: right; margin-right: 30%;">Cetak Buku Wisuda World</button></a>
+<a href="http://localhost/wisuda/cetak_pendaftar.php"><button type="button" style="height: 30px; float: left; margin-left: 30%;">Export Data Excel</button></a>
+<a href="http://localhost/wisuda/cetak_buku_wisuda.php"><button type="button" style="height: 30px; float: right; margin-right: 30%;">Cetak Buku Wisuda World</button></a>
 </form>
 
 <script type="text/javascript">
