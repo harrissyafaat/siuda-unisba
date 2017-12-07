@@ -1,0 +1,77 @@
+<?php
+include "config/conection.php";
+
+if ($connection->query("INSERT INTO tb_pmb 
+	(nama, nisn, 
+		jenis_kelamin, 
+		gol_darah, 
+		tempat_lahir, 
+		tanggal_lahir, 
+		alamat, 
+		kabupaten_kota, 
+		kode_pos, 
+		no_telp, 
+		email, 
+		pin_bb, 
+		fb, 
+		nama_ayah, 
+		pekerjaan_ayah, 
+		nama_ibu, 
+		pekerjaan_ibu, 
+		anak_ke, 
+		jml_saudara, 
+		alamat_ortu, 
+		no_telp_ortu, 
+		jen_sekolah, 
+		sekolah_asal, 
+		alamat_sekolah, 
+		id_prog_jurusan_sekolah, 
+		tahun_lulus, 
+		nilai_un, 
+		matpel_un, 
+		nilai_skhu, 
+		matpel_skhu, 
+		id_prodi, 
+		metode_bayar, 
+		date_scr) 
+	VALUES ('$_POST[nama]', 
+		'$_POST[nisn]', 
+		'$_POST[jenis_kelamin]', 
+		'$_POST[gol_darah]', 
+		'$_POST[tempat_lahir]', 
+		'$_POST[tanggal_lahir]', 
+		'$_POST[alamat_asal]', 
+		'$_POST[kabupaten_kota]', 
+		'$_POST[kode_pos]', 
+		'$_POST[telp_hp]', 
+		'$_POST[email]', 
+		'$_POST[pin_bb]', 
+		'$_POST[fb]', 
+		'$_POST[nama_ayah]', 
+		'$_POST[pekerjaan_ayah]', 
+		'$_POST[nama_ibu]', 
+		'$_POST[pekerjaan_ibu]', 
+		'$_POST[anak_ke]', 
+		'$_POST[jumlah_saudara]', 
+		'$_POST[alamat_keluarga]', 
+		'$_POST[telp_hp]', 
+		'$_POST[jen_sekolah]', 
+		'$_POST[sekolah_asal]', 
+		'$_POST[alamat_sekolah]', 
+		'$_POST[program_jurusan]', 
+		'$_POST[tahun_keluar]', 
+		'$_POST[nilai_un]', 
+		'$_POST[matpel_un]', 
+		'$_POST[nilai_skhu]', 
+		'$_POST[matpel_skhu]', 
+		'$_POST[prodi]', 
+		'$_POST[met_bayar]',
+		'$_POST[waktu]')")
+	or die (mysql_error())){
+
+		     move_uploaded_file($_FILES['foto']['tmp_name'],"upload_foto/$_POST[nisn].jpg");
+		     move_uploaded_file($_FILES['bukti_pembayaran']['tmp_name'],"upload_bukti_pembayaran/$_POST[nisn].jpg");
+
+			 header('location:cetak_pmb.php/$_POST[nisn]');
+}
+?>

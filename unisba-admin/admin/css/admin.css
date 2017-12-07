@@ -1,0 +1,182 @@
+html {
+	background: url('../../images/background.png') top left #EEEEEE;
+}
+
+body {
+	background: url('../gambar/sidebar.gif') top left repeat-y; 
+	min-width: 1000px; min-height: 900px; 
+	text-align: left; 
+	margin: 0px;
+	/*Verdana,Arial,Helvetica,sans-serif*/
+	/*font-family: MenschThin;*/
+	font-size: 12px; 
+	color: #000000;
+	margin-bottom:-50px;
+	}
+
+a		{ color:#891501; text-decoration: none;}
+a:hover		{ color:#891501; text-decoration: underline;}
+
+.header {
+	position: relative;
+	background: transparent;
+	margin: 0 0 0 300px;
+	padding-top: 10px;
+	width: 920px;
+	}
+.logout{
+	cursor:pointer;
+	padding:2px 0px 0px 20px;
+	background:url(../gambar/Left.png) no-repeat;
+}
+.logout:hover{
+	text-decoration:none;
+}
+.footer {
+    position: relative;
+    color: #666666;
+    float: left;
+    height: 23px;
+    margin: 10 0 0 300px;
+    padding: 10px;
+    width: 920px;
+	font-family: Helvetica,sans-serif;
+	}
+
+.sidebar { 
+	width: 196px; 
+	float: left; 
+	padding: 0px 20px 0px 20px;
+	}
+
+.logo { 
+	width: 196px;
+	}
+
+/******KANAN******/
+.main { 
+	margin-left: 285px; margin-right: 20px; margin-top: 30px;
+	}
+.main-wrap { 
+	min-height:300px; 
+	width: 95%; 
+	float: left; 
+	border:solid 1px #aaa;
+	padding: 10px 0px 70px 20px;
+	background-color: #fbf7f2;
+	display: none;
+	font-family: Helvetica,sans-serif;
+	font-size: 13px;
+	/*border melengkung*/
+	border-radius:5px 5px 10px 10px;
+	box-shadow:0px 0px 5px #626262;
+	}
+#motif {
+	background: url('../gambar/motif.jpg') top right no-repeat;
+}
+	
+/********MENU*******/
+.menu { 
+	padding-top: 10px;
+	margin-bottom: 20px;
+	width: 250px;
+	font-family: Helvetica,sans-serif;
+	}
+.menu ul {
+	list-style: none;
+	padding: 0px 0px 0px 0px;
+	}
+.menu li	{
+	padding-bottom: 3px; 
+	width: 205px;
+	}
+.menu li a  { 
+	display: block; 
+	line-height: 16px; 
+	padding: 8px 12px 8px 12px; 
+	background: url('../gambar/tombol_menu.png') top left no-repeat; 
+	color: #FFFFFF; 
+	text-decoration: none; 
+	font-weight: bold; 
+	}
+.menu ul ul { 	
+	font-size: 12px; 
+	font-family: Arial,Verdan,Sans-Serif;
+	width: 100%; 
+	background: url('../gambar/bck_white_10.png'); margin-top: 4px; padding: 6px 0px 8px 0px; -moz-border-radius: 3px 3px 3px 3px; -webkit-border-radius: 3px 3px 3px 3px; border-radius: 3px 3px 3px 3px; }
+.menu li li		{ padding: 4px 0px 4px 0px;}
+.menu li li a		{ padding: 0px 12px 0px 22px !important; background: url('../gambar/arrow_sm_grey.gif') 12px 6px no-repeat !important; font-weight: normal; color: #BBBBBB!important; }
+.menu li li a:hover	{ color: #FFFFFF!important; }
+.menu li li.active a	{ color: #FFFFFF!important; background: url('../gambar/arrow_sm_white.gif') 12px 6px no-repeat !important; font-weight: bold; }
+.menu li.active a	{ 
+	background: url('../gambar/menu_button_active.png') top left no-repeat; 
+	color: #333333; 
+	}
+	
+	
+/*****BUTTON****/
+.button{
+	clear:both;
+	background:none repeat scroll 0 0 #328aa4;
+	display: block;
+	height: 36px;
+	width: 180px;
+	border: 0;
+	margin-bottom: 10px;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	font-family: Arial,Verdan,Sans-Serif;
+	font-size: 13px;
+	border-radius:7px;
+}
+:hover.button{
+color:#dfdfdf;
+}
+
+/*****HEADER JUDUL***/
+.judul {
+	position: left;
+	background: #3a8310;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: -25px;
+	width: 98%;
+	height:20px;
+	border: solid 1px;
+	padding: 10px;
+	padding-left: 40px;
+	border-radius: 5px; 
+	border-color: #315492;
+	box-shadow: 0px 0px 3px #aaa;
+	}
+
+h2 {
+	font: 120% MenschThin;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+/****TABEL****/
+table, td {
+    font: 100% Helvetica,sans-serif;
+}
+table {
+    border-collapse: collapse;
+    margin: 1em 0;
+    width: 98%;
+	font-family: Helvetica,sans-serif;
+}
+th, td {
+    border: 1px solid #FFFFFF;
+    padding: 0.5em;
+    text-align: left;
+	}
+th {
+    background: url("../gambar/tr_back.gif") repeat-x scroll 0 0 #328AA4;
+    color: #FFFFFF;
+}
+td {
+    background: none repeat scroll 0 0 #E5F1F4;
+	font
+}
