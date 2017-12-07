@@ -72,7 +72,7 @@ switch($_GET["act"]){
     echo "<h2 class=judul>Data Pendaftar Wisuda Online</h2>
           <table width=100% border=1px>
           <tr><td></td><td></td><td></td><td></td><td></td>
-          <form method='POST' action='?module=pendaftar' enctype='multipart/form-data' autocomplete='off'>
+          <form method='post' action='?module=pendaftar' enctype='multipart/form-data' autocomplete='off'>
           <td colspan=2 style='text-align:right'><input style='width:150px' type='text' name='cari' placeholder=' inputkan nim...'> <input type='submit' value='Cari..'> </td>
           <td style='text-align:left; width:110px;'><button href='?module=pendaftar'>Reset</button></td>
           </tr>
@@ -81,8 +81,12 @@ switch($_GET["act"]){
           echo"<th style='text-align:center;'>Keuangan</th>";
       	  }
           echo "</tr>";
+
+         //  if(!isset($_POST['cari'])){
+         //  $cek = $_POST['cari'];
+      	  // }
 	
-    	if($_POST['cari']==''){
+    	if(!isset($_POST['cari'])){
 
     	$p      = new Paging;
 	    $batas  = 30;
@@ -94,7 +98,7 @@ switch($_GET["act"]){
 								ORDER BY c.ID DESC LIMIT $posisi,$batas");
 		$no=1;
 		}
-		else if($_POST['cari']!=''){
+		else if(isset($_POST['cari'])){
 
 		$q2 = $connection->query("select a.*, b.NAMA fakultas, c.NAMA prodi from tb_wisuda a
 			left join tb_prodi c on c.ID = a.prodi 
@@ -107,14 +111,14 @@ switch($_GET["act"]){
 			// Keuangan
 			if($_SESSION['level']==3){
 
-			    if($r2[checklist]==1){
+			    if($r2['checklist']==1){
 
 	            echo "<td style='text-align:center; background-color:yellow;'><a href=$aksi?module=pendaftar&act=uncheck&id_wisuda=$r2[id_wisuda] onclick=\"return confirm ('Apakah Anda yakin ingin Unchecked data ini?')\"><b>OK</b></a></td>
 
 			        ";
 			    }
 
-			    else if($r2[checklist]==0){
+			    else if($r2['checklist']==0){
 
 	            echo "<td style='text-align:center;'><a href=$aksi?module=pendaftar&act=check&id_wisuda=$r2[id_wisuda] onclick=\"return confirm ('Apakah Anda yakin ingin Checked data ini?')\"><b>NO</b></a></td>
 			        ";
@@ -125,20 +129,20 @@ switch($_GET["act"]){
 			// Akademik
 			if($_SESSION['level']==1){
 
-			    if($r2[check_akad]==1){
+			    if($r2['check_akad']==1){
 
 	            echo "<td style='text-align:center; background-color:yellow;'><a href=$aksi?module=pendaftar&act=uncheck_akad&id_wisuda=$r2[id_wisuda] onclick=\"return confirm ('Apakah Anda yakin ingin Unchecked data ini?')\"><b>OK</b></a></td>
 
 			        ";
 			    }
 
-			    else if($r2[check_akad]==0 && $r2[checklist]==1){
+			    else if($r2['check_akad']==0 && $r2['checklist']==1){
 
 	            echo "<td style='text-align:center;'><a href=$aksi?module=pendaftar&act=check_akad&id_wisuda=$r2[id_wisuda] onclick=\"return confirm ('Apakah Anda yakin ingin Checked data ini?')\"><b>NO</b></a></td>
 			        ";
 			    }
 
-			    else if($r2[check_akad]==0 && $r2[checklist]==0){
+			    else if($r2['check_akad']==0 && $r2['checklist']==0){
 
 	            echo "<td style='text-align:center;'><a href='#' onclick=\"return alert ('Checked Gagal! Bagian Keuangan Belum Checked NIM ini.')\"><b>Belum</b></a></td>
 			        ";
@@ -156,12 +160,12 @@ switch($_GET["act"]){
 				
 				if($_SESSION['level']==1){
 
-				if($r2[checklist]==1){
+				if($r2['checklist']==1){
 
 	            echo "<td style='text-align:center; background-color:yellow;'><b>Bayar</b></td>";
 			    }
 
-			    else if($r2[checklist]==0){
+			    else if($r2['checklist']==0){
 
 	            echo "<td style='text-align:center;'><b>Belum</b></td>";
 
