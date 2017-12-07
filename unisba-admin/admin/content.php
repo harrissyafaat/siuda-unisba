@@ -29,36 +29,21 @@ elseif ($_GET['module']=='download'){
 	include "modul/m_download/download.php";
 }
 
-//Bagian Data SMA
-elseif ($_GET['module']=='sma'){
-	include "modul/m_sma/sma.php";
-}
 
-//Bagian Data SMK
-elseif ($_GET['module']=='smk'){
-	include "modul/m_smk/smk.php";
-}
-
-//Bagian PMB
+//Bagian Pendaftaran
 elseif ($_GET['module']=='pendaftar'){
 if($_SESSION['level']==1 OR $_SESSION['level']==3){
-	include "modul/m_psb_sma/pendaftar.php";
+	include "modul/m_pendaftaran/pendaftar.php";
 }
 if($_SESSION['level']==2){
-	include "modul/m_psb_sma/pendaftar_prodi.php";
+	include "modul/m_pendaftaran/pendaftar_prodi.php";
 }
 }
 
-//Bagian PMB
 elseif ($_GET['module']=='input_pendaftar'){
 if($_SESSION['level']==2){
 	include "modul/m_input_pendaftar/input_pendaftar.php";
 }
-}
-
-//Bagian PSB SMK
-elseif ($_GET['module']=='psb_smk'){
-	include "modul/m_psb_smk/psb_smk.php";
 }
 
 //Bagian Admin
