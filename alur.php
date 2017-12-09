@@ -15,6 +15,11 @@ include "config/conection.php";
 </head>
 <body>
 <!-- START PAGE SOURCE -->
+<table>
+  <tr>
+    <td>Pengumuman Ulang</td>
+  </tr>
+</table>
 <div class="main">
   <div class="main_resize">
     <div class="header">
